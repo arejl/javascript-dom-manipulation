@@ -96,8 +96,27 @@ let shuffleCardsLeft = function(){
   let swapCard = cardGroup.firstChild;
   cardGroup.insertBefore(swapCard, null);
 };
-console.log(cardGroup.lastChild);
 
 shuffleLeftButton.addEventListener("click", shuffleCardsLeft);
 
-/*9. */
+/*9. Ajouter des événements en fonction des touches enfoncées sur le clavier*/
+
+let reorganizeContent = function(event){
+  if (event.which === 65){
+    document.getElementsByTagName('body')[0].className = "";
+    document.getElementsByTagName('body')[0].classList.add("col-4");}
+  else if (event.which === 89){
+    document.getElementsByTagName('body')[0].className = "";
+    document.getElementsByTagName('body')[0].classList.add("col-4","offset-md-4");
+  }
+  else if (event.which === 80){
+    document.getElementsByTagName('body')[0].className = "";
+    document.getElementsByTagName('body')[0].classList.add("col-4","offset-md-8");
+  }
+  else if (event.which === 66){
+    document.getElementsByTagName('body')[0].className = "";
+  }
+}
+
+navbar.addEventListener("focus", reorganizeContent)
+navbar.addEventListener("keydown", reorganizeContent)
