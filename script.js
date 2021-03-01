@@ -50,10 +50,10 @@ secondCardEditButton.addEventListener("click", secondOnEditClick);
 
 let navbar = document.getElementsByClassName("navbar")[0];
 let removeBootstrap = function(){
-  if (document.querySelectorAll("head > link")[0].href == "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"){
-    document.querySelectorAll("head > link")[0].removeAttribute("href");
+  if (document.querySelectorAll("head > link")[0].disabled === false){
+    document.querySelectorAll("head > link")[0].disabled = true;
   }
-  else {document.querySelectorAll("head > link")[0].href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"};
+  else {document.querySelectorAll("head > link")[0].disabled = false;};
 };
 navbar.addEventListener("dblclick",removeBootstrap);
 
